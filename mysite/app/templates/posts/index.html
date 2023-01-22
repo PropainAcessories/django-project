@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="UTF-8"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <title>Django Project</title>
+    </head>
+    <body>
+        {% if recent_post_list %}
+        <ul>
+            {% for post in recent_post_list %}
+            <li><a href="{% url 'detail' post.id%}">{{ post.post_text }}</a></li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <p>No posts are available.</p>
+        {% endif %}
+    </body>
+</html>
